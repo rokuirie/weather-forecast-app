@@ -198,7 +198,7 @@ public class MainWeatherFrame extends javax.swing.JFrame {
         jSeparator2.setForeground(new Color(255, 255, 255));
         jPanel2.add(jSeparator2, new AbsoluteConstraints(790, 200, 110, 10));
 
-        DayLambel.setFont(new Font("Segoe UI", 0, 13)); // NOI18N
+        DayLambel.setFont(new Font("Segoe UI", 0, 14)); // NOI18N
         DayLambel.setForeground(new Color(255, 255, 255));
 //        Thursday 9th to Olw'okuna 9
         DayLambel.setText("Olw'okuna 9");
@@ -314,7 +314,7 @@ public class MainWeatherFrame extends javax.swing.JFrame {
         jLabel21.setIcon(new ImageIcon(getClass().getResource("/Marker_64px.png"))); // NOI18N
         jPanel2.add(jLabel21, new AbsoluteConstraints(120, 10, -1, 80));
 
-        jLabel20.setFont(new Font("Segoe UI", 0, 48)); // NOI18N
+        jLabel20.setFont(new Font("Segoe UI", 0, 30)); // NOI18N
         jLabel20.setForeground(new Color(255, 255, 255));
         jPanel2.add(jLabel20, new AbsoluteConstraints(720, 30, -1, -1));
 
@@ -326,7 +326,8 @@ public class MainWeatherFrame extends javax.swing.JFrame {
 
         DescriptionLabel.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
         DescriptionLabel.setForeground(new Color(255, 255, 255));
-        DescriptionLabel.setText("Mostly Cloudy");
+//        Mostly cloudy to Kibisse
+        DescriptionLabel.setText("Kibisse");
         jPanel2.add(DescriptionLabel, new AbsoluteConstraints(450, 210, 140, -1));
 
         jLabel16.setIcon(new ImageIcon(getClass().getResource("/Thermometer-44.png"))); // NOI18N
@@ -342,7 +343,7 @@ public class MainWeatherFrame extends javax.swing.JFrame {
 
         jLabel13.setFont(new Font("Segoe UI", 1, 18)); // NOI18N
         jLabel13.setForeground(new Color(255, 255, 255));
-        jLabel13.setText("Max. Temp. ");
+        jLabel13.setText("Temp. Eyawagulu");
         jPanel2.add(jLabel13, new AbsoluteConstraints(780, 210, -1, -1));
 
         MinTempLabel.setFont(new Font("Dialog", 0, 34)); // NOI18N
@@ -352,7 +353,7 @@ public class MainWeatherFrame extends javax.swing.JFrame {
 
         jLabel11.setFont(new Font("Segoe UI", 1, 18)); // NOI18N
         jLabel11.setForeground(new Color(255, 255, 255));
-        jLabel11.setText("Min. Temp. ");
+        jLabel11.setText("Temp. Eyawansi");
         jPanel2.add(jLabel11, new AbsoluteConstraints(780, 120, -1, -1));
 
         DetailedLabel.setFont(new Font("Segoe UI", 0, 12)); // NOI18N
@@ -362,7 +363,8 @@ public class MainWeatherFrame extends javax.swing.JFrame {
 
         WindLabel.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
         WindLabel.setForeground(new Color(255, 255, 255));
-        WindLabel.setText("Wind Speed: 5m/s");
+//        Changed Wind Speed to Embiro y'empeewo
+        WindLabel.setText("Embiro Y'empewo: 5m/s");
         jPanel2.add(WindLabel, new AbsoluteConstraints(70, 240, 240, 20));
 
         HumidityLabel.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
@@ -470,12 +472,16 @@ public class MainWeatherFrame extends javax.swing.JFrame {
 
     private void UpdateTimerValue() {
         final Calendar cal = Calendar.getInstance();
-        final SimpleDateFormat sdf = new SimpleDateFormat("HH:mm");
+        final SimpleDateFormat sdf = new SimpleDateFormat("hh:mm");
         final String timeValue = sdf.format(cal.getTime());
         if (cal.get(Calendar.AM_PM) == Calendar.PM) {
-            jLabel20.setText(timeValue + " PM");
+//            Changed PM to emisana below
+            jLabel20.setText(timeValue + " emisana");
+//            Change added
+
         } else {
-            jLabel20.setText(timeValue + " AM");
+//            Changed AM to okumakya below
+            jLabel20.setText(timeValue + " okumakya");
         }
     }
 
