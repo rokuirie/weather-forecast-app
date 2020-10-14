@@ -476,12 +476,13 @@ public class MainWeatherFrame extends javax.swing.JFrame {
         final String timeValue = sdf.format(cal.getTime());
         if (cal.get(Calendar.AM_PM) == Calendar.PM) {
 //            Changed PM to emisana below
-            jLabel20.setText(timeValue + " emisana");
+            jLabel20.setText(timeValue + " Emisana");
 //            Change added
+
 
         } else {
 //            Changed AM to okumakya below
-            jLabel20.setText(timeValue + " okumakya");
+            jLabel20.setText(timeValue + " Okumakya");
         }
     }
 
