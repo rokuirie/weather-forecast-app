@@ -314,7 +314,7 @@ public class MainWeatherFrame extends javax.swing.JFrame {
         jLabel21.setIcon(new ImageIcon(getClass().getResource("/Marker_64px.png"))); // NOI18N
         jPanel2.add(jLabel21, new AbsoluteConstraints(120, 10, -1, 80));
 
-        jLabel20.setFont(new Font("Segoe UI", 0, 30)); // NOI18N
+        jLabel20.setFont(new Font("Segoe UI", 0, 25)); // NOI18N
         jLabel20.setForeground(new Color(255, 255, 255));
         jPanel2.add(jLabel20, new AbsoluteConstraints(720, 30, -1, -1));
 
@@ -478,11 +478,33 @@ public class MainWeatherFrame extends javax.swing.JFrame {
 //            Changed PM to emisana below
             jLabel20.setText(timeValue + " Emisana");
 //            Change added
-
+            if(Calendar.HOUR >= 12 && Calendar.HOUR < 1){
+                jLabel20.setText(timeValue + " Amalya g'emmere");
+            } else if (Calendar.HOUR >= 1 && Calendar.HOUR < 2) {
+                jLabel20.setText(timeValue + " Amalya g'emisana");
+            } else if (Calendar.HOUR >= 3 && Calendar.HOUR < 5) {
+                jLabel20.setText(timeValue + " Bugenze");
+            } else if (Calendar.HOUR >= 5 && Calendar.HOUR < 6) {
+                jLabel20.setText(timeValue + " Buzibye");
+            }
+            else {
+                jLabel20.setText(timeValue + " Okulima");
+            }
 
         } else {
 //            Changed AM to okumakya below
-            jLabel20.setText(timeValue + " Okumakya");
+//            jLabel20.setText(timeValue + " Okumakya");
+//            Change added
+            if(Calendar.HOUR == 4){
+                jLabel20.setText(timeValue + " Ekinywa Mbogo");
+            } else if(Calendar.HOUR >= 7 && Calendar.HOUR < 8){
+                jLabel20.setText(timeValue + " Amalya g'Enkya");
+            } else if (Calendar.HOUR >= 9 && Calendar.HOUR < 12) {
+                jLabel20.setText(timeValue + " Okusiga Gwaka");
+            } else {
+                jLabel20.setText(timeValue + " Okulima");
+            }
+
         }
     }
 
