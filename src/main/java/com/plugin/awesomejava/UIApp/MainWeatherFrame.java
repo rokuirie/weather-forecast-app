@@ -476,33 +476,44 @@ public class MainWeatherFrame extends javax.swing.JFrame {
         final String timeValue = sdf.format(cal.getTime());
         if (cal.get(Calendar.AM_PM) == Calendar.PM) {
 //            Changed PM to emisana below
-            jLabel20.setText(timeValue + " Emisana");
+//            jLabel20.setText(timeValue + " Emisana");
 //            Change added
-            if(Calendar.HOUR >= 12 && Calendar.HOUR < 1){
+            if(cal.get(Calendar.HOUR_OF_DAY) >= 12 && cal.get(Calendar.HOUR_OF_DAY) < 13){
                 jLabel20.setText(timeValue + " Amalya g'emmere");
-            } else if (Calendar.HOUR >= 1 && Calendar.HOUR < 2) {
+            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 13 && cal.get(Calendar.HOUR_OF_DAY) < 14) {
                 jLabel20.setText(timeValue + " Amalya g'emisana");
-            } else if (Calendar.HOUR >= 3 && Calendar.HOUR < 5) {
-                jLabel20.setText(timeValue + " Bugenze");
-            } else if (Calendar.HOUR >= 5 && Calendar.HOUR < 6) {
+            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 14 && cal.get(Calendar.HOUR_OF_DAY) < 16) {
+                jLabel20.setText(timeValue + " Okuziika");
+            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 16 && cal.get(Calendar.HOUR_OF_DAY) < 18) {
+                jLabel20.setText(timeValue + " Buyise");
+            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 18 && cal.get(Calendar.HOUR_OF_DAY) < 19) {
                 jLabel20.setText(timeValue + " Buzibye");
-            }
-            else {
-                jLabel20.setText(timeValue + " Okulima");
+            } else if (cal.get(Calendar.HOUR_OF_DAY) == 18 && cal.get(Calendar.MINUTE) == 59) {
+                jLabel20.setText(timeValue + " Bumaze");
+            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 19 && cal.get(Calendar.HOUR_OF_DAY) < 20) {
+                jLabel20.setText(timeValue + " Amalya g'Ekiro");
+            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 20 && cal.get(Calendar.HOUR_OF_DAY) < 22) {
+                jLabel20.setText(timeValue + " Okwebaka");
+            } else {
+                jLabel20.setText(timeValue + " Emisana");
             }
 
         } else {
 //            Changed AM to okumakya below
 //            jLabel20.setText(timeValue + " Okumakya");
 //            Change added
-            if(Calendar.HOUR == 4){
-                jLabel20.setText(timeValue + " Ekinywa Mbogo");
-            } else if(Calendar.HOUR >= 7 && Calendar.HOUR < 8){
+            if(cal.get(Calendar.HOUR_OF_DAY) == 4){
+                jLabel20.setText(timeValue + " Ekinywambogo");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 6 && cal.get(Calendar.MINUTE) == 11){
+                jLabel20.setText(timeValue + " Bukedde");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) >= 7 && cal.get(Calendar.HOUR_OF_DAY) < 8){
                 jLabel20.setText(timeValue + " Amalya g'Enkya");
-            } else if (Calendar.HOUR >= 9 && Calendar.HOUR < 12) {
+            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 9 && cal.get(Calendar.HOUR_OF_DAY) < 10) {
                 jLabel20.setText(timeValue + " Okusiga Gwaka");
-            } else {
-                jLabel20.setText(timeValue + " Okulima");
+            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 10 && cal.get(Calendar.HOUR_OF_DAY) < 0) {
+                jLabel20.setText(timeValue + " Okumakya");
+            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 0 && cal.get(Calendar.HOUR_OF_DAY) < 4) {
+                jLabel20.setText(timeValue + "Ekiro");
             }
 
         }
