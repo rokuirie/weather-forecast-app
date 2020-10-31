@@ -200,8 +200,8 @@ public class MainWeatherFrame extends javax.swing.JFrame {
 
         DayLambel.setFont(new Font("Segoe UI", 0, 14)); // NOI18N
         DayLambel.setForeground(new Color(255, 255, 255));
-//        Thursday 9th to Olw'okuna 9
-        DayLambel.setText("Olw'okuna 9");
+//        Thursday 9th to Olw'okuna 9 to Olunaku for day
+        DayLambel.setText("OLUNAKU");
         jPanel2.add(DayLambel, new AbsoluteConstraints(40, 430, 90, -1));
 
         CurrentTempLabel.setFont(new Font("Segoe UI", 0, 56)); // NOI18N
@@ -276,12 +276,12 @@ public class MainWeatherFrame extends javax.swing.JFrame {
 
         SATTempJLabel.setFont(new Font("Segoe UI", 1, 13)); // NOI18N
         SATTempJLabel.setForeground(new Color(255, 255, 255));
-        SATTempJLabel.setText("25");
+        SATTempJLabel.setText("25°");
         jPanel2.add(SATTempJLabel, new AbsoluteConstraints(790, 440, -1, -1));
 
         SUNTempJLabel.setFont(new Font("Segoe UI", 1, 13)); // NOI18N
         SUNTempJLabel.setForeground(new Color(255, 255, 255));
-        SUNTempJLabel.setText("22");
+        SUNTempJLabel.setText("22°");
         jPanel2.add(SUNTempJLabel, new AbsoluteConstraints(900, 440, -1, -1));
 
         jLabel29.setFont(new Font("Segoe UI", 1, 13)); // NOI18N
@@ -328,7 +328,7 @@ public class MainWeatherFrame extends javax.swing.JFrame {
         DescriptionLabel.setForeground(new Color(255, 255, 255));
 //        Mostly cloudy to Kibisse
         DescriptionLabel.setText("Kibisse");
-        jPanel2.add(DescriptionLabel, new AbsoluteConstraints(450, 210, 140, -1));
+        jPanel2.add(DescriptionLabel, new AbsoluteConstraints(385, 210, 140, -1));
 
         jLabel16.setIcon(new ImageIcon(getClass().getResource("/Thermometer-44.png"))); // NOI18N
         jPanel2.add(jLabel16, new AbsoluteConstraints(870, 230, 40, 50));
@@ -356,16 +356,17 @@ public class MainWeatherFrame extends javax.swing.JFrame {
         jLabel11.setText("Temp. Eyawansi");
         jPanel2.add(jLabel11, new AbsoluteConstraints(780, 120, -1, -1));
 
-        DetailedLabel.setFont(new Font("Segoe UI", 0, 12)); // NOI18N
+        DetailedLabel.setFont(new Font("Segoe UI", 0, 14)); // NOI18N
         DetailedLabel.setForeground(new Color(255, 255, 255));
-        DetailedLabel.setText("Last Updated: Sat Apr 29 13:00:00 EEST 2017");
-        jPanel2.add(DetailedLabel, new AbsoluteConstraints(390, 250, 240, -1));
+//        DetailedLabel.setText("Last Updated: Sat Apr 29 13:00:00 EEST 2017");
+        DetailedLabel.setText("OKUFUNA UPDATE, NYIGA WANO.");
+        jPanel2.add(DetailedLabel, new AbsoluteConstraints(385, 250, 240, -1));
 
         WindLabel.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
         WindLabel.setForeground(new Color(255, 255, 255));
 //        Changed Wind Speed to Embiro y'empeewo
-        WindLabel.setText("Embiro Y'empewo: 5m/s");
-        jPanel2.add(WindLabel, new AbsoluteConstraints(70, 240, 240, 20));
+        WindLabel.setText("Embiro y'empewo: 5m/s");
+        jPanel2.add(WindLabel, new AbsoluteConstraints(70, 240, 240, 19));
 
         HumidityLabel.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
         HumidityLabel.setForeground(new Color(255, 255, 255));
@@ -508,12 +509,14 @@ public class MainWeatherFrame extends javax.swing.JFrame {
                 jLabel20.setText(timeValue + " Bukedde");
             } else if(cal.get(Calendar.HOUR_OF_DAY) >= 7 && cal.get(Calendar.HOUR_OF_DAY) < 8){
                 jLabel20.setText(timeValue + " Amalya g'Enkya");
-            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 9 && cal.get(Calendar.HOUR_OF_DAY) < 10) {
+            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 8 && cal.get(Calendar.HOUR_OF_DAY) < 10) {
                 jLabel20.setText(timeValue + " Okusiga Gwaka");
-            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 10 && cal.get(Calendar.HOUR_OF_DAY) < 0) {
+            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 10 && cal.get(Calendar.HOUR_OF_DAY) < 11) {
                 jLabel20.setText(timeValue + " Okumakya");
             } else if (cal.get(Calendar.HOUR_OF_DAY) >= 0 && cal.get(Calendar.HOUR_OF_DAY) < 4) {
-                jLabel20.setText(timeValue + "Ekiro");
+                jLabel20.setText(timeValue + " Ekiro");
+            } else {
+                jLabel20.setText(timeValue + " Okumakya");
             }
 
         }

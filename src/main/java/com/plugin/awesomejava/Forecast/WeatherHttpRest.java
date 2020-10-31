@@ -69,7 +69,7 @@ public class WeatherHttpRest {
         forecastValue.setPressure("Puleesa: " + String.valueOf(dayForecast.getPressure()) + " mbar ");
         forecastValue.setClouds(String.valueOf(dayForecast.getPercentageOfClouds()) + "%");
 //        Wind Speed to Embiro y'Empewo
-        forecastValue.setWind_Speed("Embiro y'Empewo : " + String.valueOf(dayForecast.getWindSpeed()) + "m/s");
+        forecastValue.setWind_Speed("Embiro y'empewo : " + String.valueOf(dayForecast.getWindSpeed()) + "m/s");
         forecastValue.setDescription(weather.getWeatherDescription());
         forecastValue.setDayofWeek(dayForecast.getDateTime());
 

@@ -5,6 +5,7 @@ com\plugin\awesomejava\UIApp\DynJLabelObject.class
 com\plugin\awesomejava\UIApp\MainWeatherFrame$5.class
 com\plugin\awesomejava\Forecast\FeedEntry.class
 com\plugin\awesomejava\UIApp\BackgroundWorker.class
+com\plugin\awesomejava\Forecast\reviseJava.class
 com\plugin\awesomejava\UIApp\MainWeatherFrame$7.class
 com\plugin\awesomejava\UIApp\MainWeatherFrame.class
 com\plugin\awesomejava\UIApp\MainWeatherFrame$4.class

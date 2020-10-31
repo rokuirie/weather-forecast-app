@@ -6,7 +6,8 @@ public abstract class WeatherDescription {
     public static final String Rain = "enkuba";
 //    public static final String Clear = "clear"; clear to butukula
     public static final String Clear = "butukula";
-    public static final String Snow = "snow";
+//    public static final String Snow = "snow"; snow to omuzira
+    public static final String Snow = "omuzira";
 //    public static final String Clouds = "clouds"; clouds to kibisse for clouds covering
     public static final String Clouds = "kibisse";
 

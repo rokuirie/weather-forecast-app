@@ -53,7 +53,8 @@ public class LocationInfo {
 
             String dayOfWeek = new SimpleDateFormat("EEEE", Locale.ENGLISH).format(date);
 
-            return dayOfWeek + " " + day + "TH";
+//            Removed TH concatenated at the end of the line below:
+            return dayOfWeek + " " + day ;
         } catch (ParseException ex) {
             System.out.println(ex.toString());
             return Error.LISTVALUES.getDescription();
