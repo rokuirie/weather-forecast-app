@@ -10,7 +10,7 @@ import java.io.InputStream;
 
 public class GetCurrentRegion {
 
-    private static final String dbLocation = "/GeoLiteCity.dat";
+    private static final String dbLocation = "/maxmind4.dat";
     private final File database;
 
     public GetCurrentRegion() {

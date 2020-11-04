@@ -2,8 +2,9 @@ package com.plugin.awesomejava.Forecast;
 
 
 public class FeedEntry {
-
+//
     private static final String ApiKey = "305be23140a9d5d08890247143be3227";
+
     private String Location;
     private String CountryCode;
     private int Days;

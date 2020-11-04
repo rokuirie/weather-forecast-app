@@ -359,7 +359,7 @@ public class MainWeatherFrame extends javax.swing.JFrame {
         DetailedLabel.setFont(new Font("Segoe UI", 0, 14)); // NOI18N
         DetailedLabel.setForeground(new Color(255, 255, 255));
 //        DetailedLabel.setText("Last Updated: Sat Apr 29 13:00:00 EEST 2017");
-        DetailedLabel.setText("OKUFUNA UPDATE, NYIGA WANO.");
+        DetailedLabel.setText("OKUFUNA APUDETI, NYIGA WANO.");
         jPanel2.add(DetailedLabel, new AbsoluteConstraints(385, 250, 240, -1));
 
         WindLabel.setFont(new Font("Segoe UI", 0, 18)); // NOI18N

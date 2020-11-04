@@ -3,13 +3,13 @@ package com.plugin.awesomejava.Forecast;
 public abstract class WeatherDescription {
 
 //    public static final String Rain = "rain"; rain to enkuba
-    public static final String Rain = "enkuba";
+    public static final String Rain = "rain";
 //    public static final String Clear = "clear"; clear to butukula
-    public static final String Clear = "butukula";
+    public static final String Clear = "clear";
 //    public static final String Snow = "snow"; snow to omuzira
-    public static final String Snow = "omuzira";
+    public static final String Snow = "snow";
 //    public static final String Clouds = "clouds"; clouds to kibisse for clouds covering
-    public static final String Clouds = "kibisse";
+    public static final String Clouds = "clouds";
 
     //small icons set
     public static final String CloudIcon64PX = "/Cloud_64px.png";

@@ -14,8 +14,8 @@ import java.util.Locale;
 
 public class LocationInfo {
 
-    private static final String STRING_URL = "http://checkip.amazonaws.com";
-
+//    private static final String STRING_URL = "http://checkip.amazonaws.com";
+    private static final String STRING_URL = "http://ifconfig.me";
     public static String getIp() {
         BufferedReader in = null;
         URL whatismyip = null;
