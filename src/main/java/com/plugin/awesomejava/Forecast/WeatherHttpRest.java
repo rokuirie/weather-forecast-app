@@ -58,7 +58,7 @@ public class WeatherHttpRest {
             final DailyForecast.Forecast.Weather weather) {
         forecastValue = new ForecastValues();
 
-        forecastValue.setDateInformations("Last Updated: " + String.valueOf(dayForecast.getDateTime()));
+        forecastValue.setDateInformations("Apudeti e'yasembayo: " + String.valueOf(dayForecast.getDateTime()));
 
         forecastValue.setMinTemperature(TemperatureRoundSplit.SplitStringValue(temperature.getMinimumTemperature()) + DEGREE + "C");
         forecastValue.setMaxTemperature(TemperatureRoundSplit.SplitStringValue(temperature.getMaximumTemperature()) + DEGREE + "C");

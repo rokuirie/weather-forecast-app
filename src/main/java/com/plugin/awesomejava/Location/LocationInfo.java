@@ -13,7 +13,6 @@ import java.util.Date;
 import java.util.Locale;
 
 public class LocationInfo {
-
 //    private static final String STRING_URL = "http://checkip.amazonaws.com";
     private static final String STRING_URL = "http://ifconfig.me";
     public static String getIp() {
@@ -45,7 +44,6 @@ public class LocationInfo {
         try {
             DateObjects localdate = GetLocalDate();
             String dateString = String.format("%d-%d-%d", localdate.year, localdate.month, localdate.day);
-
             Date date = new SimpleDateFormat("yyyy-M-d").parse(dateString);
             Calendar cal = Calendar.getInstance();
             cal.setTime(date);
@@ -65,6 +63,30 @@ public class LocationInfo {
         Calendar calendar = Calendar.getInstance();
         int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
         return dayOfWeek;
+    }
+
+    public static String dayLuganda(){
+        Calendar calendar = Calendar.getInstance();
+        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
+        String dayOfWeekStr = String.valueOf(dayOfWeek);
+        String dayLG = "day";
+
+        if(dayOfWeekStr == "2"){
+            dayLG = "Olw'ebbalaza";
+        } else if(dayOfWeekStr == "3"){
+            dayLG = "Olw'okubiri";
+        } else if(dayOfWeekStr == "4"){
+            dayLG = "Olw'okusatu";
+        } else if(dayOfWeekStr == "5"){
+            dayLG = "Olw'okuna";
+        } else if(dayOfWeekStr == "6"){
+            dayLG = "Olw'okutano";
+        } else if(dayOfWeekStr == "7"){
+            dayLG = "Olw'omukaaga";
+        } else if(dayOfWeekStr == "1"){
+            dayLG = "Ssabitti";
+        }
+        return dayLG;
     }
 
     private static DateObjects GetLocalDate() {

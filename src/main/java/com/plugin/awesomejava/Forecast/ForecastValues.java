@@ -20,6 +20,7 @@ public class ForecastValues {
     private String Pressure;
     private String Clouds;
     private String Wind_Speed;
+    private String DescriptionLG;
 
     public ForecastValues() {
     }
@@ -47,7 +48,7 @@ public class ForecastValues {
     }
 
     public ForecastValues(String DateInformations, String Datetemperature, String MaxTemperature, String MinTemperature,
-            String Description, String Humidity, String Pressure, String Clouds, String Wind_Speed) {
+            String Description, String Humidity, String Pressure, String Clouds, String Wind_Speed, String descriptionLG) {
         this.DateInformations = DateInformations;
         this.Datetemperature = Datetemperature;
         this.MaxTemperature = MaxTemperature;
@@ -57,10 +58,12 @@ public class ForecastValues {
         this.Pressure = Pressure;
         this.Clouds = Clouds;
         this.Wind_Speed = Wind_Speed;
+
+        this.DescriptionLG = DescriptionLG;
     }
 
     public ForecastValues(String DateInformations, String MaxTemperature, String MinTemperature, String Datetemperature, Date DayofWeek,
-            ImageIcon WeatherIcon, String Description, String Humidity, String Pressure, String Clouds, String Wind_Speed) {
+            ImageIcon WeatherIcon, String Description, String Humidity, String Pressure, String Clouds, String Wind_Speed, String DescriptionLG) {
         this.DateInformations = DateInformations;
         this.MaxTemperature = MaxTemperature;
         this.MinTemperature = MinTemperature;
@@ -72,6 +75,8 @@ public class ForecastValues {
         this.Pressure = Pressure;
         this.Clouds = Clouds;
         this.Wind_Speed = Wind_Speed;
+
+        this.DescriptionLG = DescriptionLG;
     }
 
     public void setDateInformations(String DateInformations) {
@@ -108,6 +113,11 @@ public class ForecastValues {
 
     public void setDescription(String Description) {
         this.Description = Description;
+    }
+
+    // set DescriptionLG
+    public void setDescriptionLG(String DescriptionLG){
+        this.DescriptionLG = DescriptionLG;
     }
 
     public void setCurrentDay(boolean CurrentDay) {
@@ -166,6 +176,11 @@ public class ForecastValues {
         return Description;
     }
 
+    // get Luganda description
+    public String getDescriptionLG(){
+        return DescriptionLG;
+    }
+
     public Date getDayofWeek() {
         return DayofWeek;
     }
@@ -184,7 +199,7 @@ public class ForecastValues {
                 + Datetemperature + " ,"
                 + MaxTemperature + " ,"
                 + MinTemperature + " ,"
-                + Description + " ,"
+                + DescriptionLG + " ,"
                 + Humidity + " ,"
                 + Pressure + " ,"
                 + Clouds + " ,"
