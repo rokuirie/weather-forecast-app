@@ -82,27 +82,13 @@ public class BackgroundWorker extends SwingWorker<String, Void> {
     }
 
     private void SetForecastValuesForCurrentDay(final ForecastValues ForecastValue) {
-        {
-            String weatherDescr;
-            String weatherDescrLG;
-            weatherDescr = ForecastValue.getDescription();
-            if (weatherDescr == "moderate rain") {
-//                this.DescriptionLabel.setText("Enkuba etonnya");
-                weatherDescr = "enkuba etonnya";
-                System.out.println(weatherDescr);
-            } else if (weatherDescr == "heavy intensity rain") {
-//                this.DescriptionLabel.setText("Enkuba etonnya");
-                weatherDescr = "enkuba etonnya";
-            }
-
-        }
 
 
         this.CurrentTempLabel.setText(ForecastValue.getDateTemperature());
 //        this.DayLambel.setText(LocationInfo.DayName());
 //        this.DayLambel.setText(LocationInfo.dayLuganda());
 
-//        this.DescriptionLabel.setText(ForecastValue.getDescription());
+        this.DescriptionLabel.setText(ForecastValue.getDescription());
 
 
 //        this.DetailedLabel.setText(ForecastValue.getDateInformations());

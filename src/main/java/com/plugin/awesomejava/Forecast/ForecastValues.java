@@ -20,7 +20,7 @@ public class ForecastValues {
     private String Pressure;
     private String Clouds;
     private String Wind_Speed;
-    private String DescriptionLG;
+//    private String DescriptionLG;
 
     public ForecastValues() {
     }
@@ -59,7 +59,7 @@ public class ForecastValues {
         this.Clouds = Clouds;
         this.Wind_Speed = Wind_Speed;
 
-        this.DescriptionLG = DescriptionLG;
+//        this.DescriptionLG = DescriptionLG;
     }
 
     public ForecastValues(String DateInformations, String MaxTemperature, String MinTemperature, String Datetemperature, Date DayofWeek,
@@ -75,8 +75,6 @@ public class ForecastValues {
         this.Pressure = Pressure;
         this.Clouds = Clouds;
         this.Wind_Speed = Wind_Speed;
-
-        this.DescriptionLG = DescriptionLG;
     }
 
     public void setDateInformations(String DateInformations) {
@@ -113,11 +111,6 @@ public class ForecastValues {
 
     public void setDescription(String Description) {
         this.Description = Description;
-    }
-
-    // set DescriptionLG
-    public void setDescriptionLG(String DescriptionLG){
-        this.DescriptionLG = DescriptionLG;
     }
 
     public void setCurrentDay(boolean CurrentDay) {
@@ -176,11 +169,6 @@ public class ForecastValues {
         return Description;
     }
 
-    // get Luganda description
-    public String getDescriptionLG(){
-        return DescriptionLG;
-    }
-
     public Date getDayofWeek() {
         return DayofWeek;
     }
@@ -199,7 +187,7 @@ public class ForecastValues {
                 + Datetemperature + " ,"
                 + MaxTemperature + " ,"
                 + MinTemperature + " ,"
-                + DescriptionLG + " ,"
+                + Description + " ,"
                 + Humidity + " ,"
                 + Pressure + " ,"
                 + Clouds + " ,"

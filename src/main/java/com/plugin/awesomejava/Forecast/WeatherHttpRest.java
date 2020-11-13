@@ -10,7 +10,6 @@ import java.util.HashMap;
 import javax.swing.ImageIcon;
 
 public class WeatherHttpRest {
-
     private static final boolean isMetric = true;
     private static final String DEGREE = "\u00b0";
 
@@ -70,7 +69,10 @@ public class WeatherHttpRest {
         forecastValue.setClouds(String.valueOf(dayForecast.getPercentageOfClouds()) + "%");
 //        Wind Speed to Embiro y'Empewo
         forecastValue.setWind_Speed("Embiro y'empewo : " + String.valueOf(dayForecast.getWindSpeed()) + "m/s");
+
         forecastValue.setDescription(weather.getWeatherDescription());
+
+
         forecastValue.setDayofWeek(dayForecast.getDateTime());
 
         this.weather.setForecastValue(forecastValue);
