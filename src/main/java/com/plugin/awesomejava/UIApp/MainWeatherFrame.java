@@ -479,44 +479,60 @@ public class MainWeatherFrame extends javax.swing.JFrame {
 //            Changed PM to emisana below
 //            jLabel20.setText(timeValue + " Emisana");
 //            Change added
-            if(cal.get(Calendar.HOUR_OF_DAY) >= 12 && cal.get(Calendar.HOUR_OF_DAY) < 13){
-                jLabel20.setText(timeValue + " Amalya g'emmere");
-            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 13 && cal.get(Calendar.HOUR_OF_DAY) < 14) {
-                jLabel20.setText(timeValue + " Amalya g'emisana");
-            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 14 && cal.get(Calendar.HOUR_OF_DAY) < 16) {
-                jLabel20.setText(timeValue + " Okuziika");
-            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 16 && cal.get(Calendar.HOUR_OF_DAY) < 18) {
-                jLabel20.setText(timeValue + " Emisana");
-            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 18 && cal.get(Calendar.HOUR_OF_DAY) < 19) {
-                jLabel20.setText(timeValue + " Emisana");
-            } else if (cal.get(Calendar.HOUR_OF_DAY) == 18 && cal.get(Calendar.MINUTE) == 59) {
-                jLabel20.setText(timeValue + " Emisana");
-            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 19 && cal.get(Calendar.HOUR_OF_DAY) < 20) {
-                jLabel20.setText(timeValue + " Amalya g'Ekiro");
-            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 20 && cal.get(Calendar.HOUR_OF_DAY) < 22) {
-                jLabel20.setText(timeValue + " Ekiro");
-            } else {
-                jLabel20.setText(timeValue + " Ekiro");
+            if(cal.get(Calendar.HOUR_OF_DAY) == 12){
+                jLabel20.setText("6:" + cal.get(Calendar.MINUTE) + " Tuntu");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 13){
+                jLabel20.setText("7:" + cal.get(Calendar.MINUTE) + " Tuntu");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 14){
+                jLabel20.setText("8:" + cal.get(Calendar.MINUTE) + " Eggulo");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 15){
+                jLabel20.setText("9:" + cal.get(Calendar.MINUTE) + " Eggulo");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 16){
+                jLabel20.setText("10:" + cal.get(Calendar.MINUTE) + " Eggulo");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 17){
+                jLabel20.setText("11:" + cal.get(Calendar.MINUTE) + " Eggulo");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 18){
+                jLabel20.setText("12:" + cal.get(Calendar.MINUTE) + " Akawungeezi");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 19){
+                jLabel20.setText("1:" + cal.get(Calendar.MINUTE) + " Akawungeezi");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 20){
+                jLabel20.setText("2:" + cal.get(Calendar.MINUTE) + " Ekiro");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 21){
+                jLabel20.setText("3:" + cal.get(Calendar.MINUTE) + " Ekiro");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 22){
+                jLabel20.setText("4:" + cal.get(Calendar.MINUTE) + " Ekiro");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 23){
+                jLabel20.setText("5:" + cal.get(Calendar.MINUTE) + " Ekiro");
             }
 
         } else {
 //            Changed AM to okumakya below
 //            jLabel20.setText(timeValue + " Okumakya");
 //            Change added
-            if(cal.get(Calendar.HOUR_OF_DAY) == 4){
-                jLabel20.setText(timeValue + " Ekinywambogo");
-            } else if(cal.get(Calendar.HOUR_OF_DAY) == 6 && cal.get(Calendar.MINUTE) == 11){
-                jLabel20.setText(timeValue + " Bukedde");
-            } else if(cal.get(Calendar.HOUR_OF_DAY) >= 7 && cal.get(Calendar.HOUR_OF_DAY) < 8){
-                jLabel20.setText(timeValue + " Amalya g'Enkya");
-            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 8 && cal.get(Calendar.HOUR_OF_DAY) < 10) {
-                jLabel20.setText(timeValue + " Okusiga Gwaka");
-            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 10 && cal.get(Calendar.HOUR_OF_DAY) < 11) {
-                jLabel20.setText(timeValue + " Okumakya");
-            } else if (cal.get(Calendar.HOUR_OF_DAY) >= 0 && cal.get(Calendar.HOUR_OF_DAY) < 4) {
-                jLabel20.setText(timeValue + " Ekiro");
-            } else {
-                jLabel20.setText(timeValue + " Okumakya");
+            if(cal.get(Calendar.HOUR_OF_DAY) == 7){
+                jLabel20.setText("1:" + cal.get(Calendar.MINUTE) + " Okumakya");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 8){
+                jLabel20.setText("2:" + cal.get(Calendar.MINUTE) + " Okumakya");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 9){
+                jLabel20.setText("3:" + cal.get(Calendar.MINUTE) + " Okumakya");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 10){
+                jLabel20.setText("4:" + cal.get(Calendar.MINUTE) + " Okumakya");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 11){
+                jLabel20.setText("5:" + cal.get(Calendar.MINUTE) + " Okumakya");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 24){
+                jLabel20.setText("6:" + cal.get(Calendar.MINUTE) + " Tumbi");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 01){
+                jLabel20.setText("7:" + cal.get(Calendar.MINUTE) + " Ekiro");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 02){
+                jLabel20.setText("8:" + cal.get(Calendar.MINUTE) + " Ekiro");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 03){
+                jLabel20.setText("9:" + cal.get(Calendar.MINUTE) + " Ekiro");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 04){
+                jLabel20.setText("10:" + cal.get(Calendar.MINUTE) + " Ekiro");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 05){
+                jLabel20.setText("11:" + cal.get(Calendar.MINUTE) + " Ekiro");
+            } else if(cal.get(Calendar.HOUR_OF_DAY) == 06){
+                jLabel20.setText("12:" + cal.get(Calendar.MINUTE) + " Ekiro");
             }
 
         }

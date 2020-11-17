@@ -82,12 +82,7 @@ public class BackgroundWorker extends SwingWorker<String, Void> {
     }
 
     private void SetForecastValuesForCurrentDay(final ForecastValues ForecastValue) {
-
-
         this.CurrentTempLabel.setText(ForecastValue.getDateTemperature());
-//        this.DayLambel.setText(LocationInfo.DayName());
-//        this.DayLambel.setText(LocationInfo.dayLuganda());
-
         this.DescriptionLabel.setText(ForecastValue.getDescription());
 
 
