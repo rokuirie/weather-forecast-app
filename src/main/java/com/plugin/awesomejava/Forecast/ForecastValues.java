@@ -58,8 +58,6 @@ public class ForecastValues {
         this.Pressure = Pressure;
         this.Clouds = Clouds;
         this.Wind_Speed = Wind_Speed;
-
-//        this.DescriptionLG = DescriptionLG;
     }
 
     public ForecastValues(String DateInformations, String MaxTemperature, String MinTemperature, String Datetemperature, Date DayofWeek,

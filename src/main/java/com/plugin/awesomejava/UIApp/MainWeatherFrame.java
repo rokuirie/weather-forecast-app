@@ -1,6 +1,9 @@
 package com.plugin.awesomejava.UIApp;
 
 import com.plugin.awesomejava.Forecast.FeedEntry;
+//import com.plugin.awesomejava.Forecast.WeatherImp;
+import com.plugin.awesomejava.Forecast.TextToSpeech;
+import com.plugin.awesomejava.Forecast.AudioPlayer;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
@@ -21,6 +24,19 @@ import javax.swing.JSeparator;
 import javax.swing.SwingConstants;
 import javax.swing.Timer;
 import javax.swing.WindowConstants;
+
+
+// to work with marytts voice support
+import java.util.Arrays;
+import java.util.List;
+
+import marytts.util.data.audio.MaryAudioUtils;
+import marytts.signalproc.effects.JetPilotEffect;
+import marytts.signalproc.effects.LpcWhisperiserEffect;
+import marytts.signalproc.effects.RobotiserEffect;
+import marytts.signalproc.effects.StadiumEffect;
+import marytts.signalproc.effects.VocalTractLinearScalerEffect;
+import marytts.signalproc.effects.VolumeEffect;
 
 public class MainWeatherFrame extends javax.swing.JFrame {
 
@@ -82,6 +98,8 @@ public class MainWeatherFrame extends javax.swing.JFrame {
     private Timer timer = null;
     private DynamicJLabelList DynJLabelList;
     private final FeedEntry entry;
+
+//    private final WeatherImp weather;
 
     public MainWeatherFrame(FeedEntry entry) {
         this.entry = entry;
@@ -169,11 +187,11 @@ public class MainWeatherFrame extends javax.swing.JFrame {
         jLabel4.setIcon(new ImageIcon(getClass().getResource("/Atmospheric Pressure-44 (1).png"))); // NOI18N
         jPanel2.add(jLabel4, new AbsoluteConstraints(10, 150, -1, 40));
 
-        PressureJLabel.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
+        PressureJLabel.setFont(new Font("Segoe UI", 0, 16)); // NOI18N
         PressureJLabel.setForeground(new Color(255, 255, 255));
-//        Pressure to Puleesa below
-        PressureJLabel.setText("Puleesa: 23.67 inHG  ");
-        jPanel2.add(PressureJLabel, new AbsoluteConstraints(70, 160, 220, -1));
+//        Pressure to amanyi g'empewo below
+        PressureJLabel.setText("Amanyi g'empewo: 23.67 inHG  ");
+        jPanel2.add(PressureJLabel, new AbsoluteConstraints(65, 160, 230, -1));
 
         jSeparator5.setBackground(new Color(255, 255, 255));
         jSeparator5.setForeground(new Color(255, 255, 255));
@@ -183,7 +201,7 @@ public class MainWeatherFrame extends javax.swing.JFrame {
         jSeparator3.setBackground(new Color(255, 255, 255));
         jSeparator3.setForeground(new Color(255, 255, 255));
         jSeparator3.setOrientation(SwingConstants.VERTICAL);
-        jPanel2.add(jSeparator3, new AbsoluteConstraints(300, 150, 10, 120));
+        jPanel2.add(jSeparator3, new AbsoluteConstraints(330, 150, 10, 120));
 
         jLabel45.setFont(new Font("Segoe UI", 0, 30)); // NOI18N
         jLabel45.setForeground(new Color(255, 255, 255));
@@ -331,47 +349,48 @@ public class MainWeatherFrame extends javax.swing.JFrame {
         jPanel2.add(DescriptionLabel, new AbsoluteConstraints(385, 210, 140, -1));
 
         jLabel16.setIcon(new ImageIcon(getClass().getResource("/Thermometer-44.png"))); // NOI18N
-        jPanel2.add(jLabel16, new AbsoluteConstraints(870, 230, 40, 50));
+        jPanel2.add(jLabel16, new AbsoluteConstraints(820, 230, 40, 50));
 
         jLabel15.setIcon(new ImageIcon(getClass().getResource("/Thermometer-44.png"))); // NOI18N
-        jPanel2.add(jLabel15, new AbsoluteConstraints(870, 140, 40, 50));
+        jPanel2.add(jLabel15, new AbsoluteConstraints(820, 140, 40, 50));
 
         MaxTempLabel.setFont(new Font("Dialog", 0, 34)); // NOI18N
         MaxTempLabel.setForeground(new Color(255, 255, 255));
         MaxTempLabel.setText("24 ℃");
-        jPanel2.add(MaxTempLabel, new AbsoluteConstraints(780, 240, 100, -1));
+        jPanel2.add(MaxTempLabel, new AbsoluteConstraints(720, 240, 100, -1));
 
-        jLabel13.setFont(new Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel13.setFont(new Font("Segoe UI", 1, 16)); // NOI18N
         jLabel13.setForeground(new Color(255, 255, 255));
-        jLabel13.setText("E'bbugumu Eyawagulu");
-        jPanel2.add(jLabel13, new AbsoluteConstraints(780, 210, -1, -1));
+        jLabel13.setText("E'bbugumu erisinga");
+        jPanel2.add(jLabel13, new AbsoluteConstraints(720, 210, -1, -1));
 
         MinTempLabel.setFont(new Font("Dialog", 0, 34)); // NOI18N
         MinTempLabel.setForeground(new Color(255, 255, 255));
         MinTempLabel.setText("11 ℃");
-        jPanel2.add(MinTempLabel, new AbsoluteConstraints(780, 150, 100, 40));
+        jPanel2.add(MinTempLabel, new AbsoluteConstraints(720, 150, 100, 40));
 
-        jLabel11.setFont(new Font("Segoe UI", 1, 18)); // NOI18N
+        jLabel11.setFont(new Font("Segoe UI", 1, 16)); // NOI18N
         jLabel11.setForeground(new Color(255, 255, 255));
-        jLabel11.setText("E'bbugumu Eyawansi");
-        jPanel2.add(jLabel11, new AbsoluteConstraints(780, 120, -1, -1));
+        jLabel11.setText("E'bbugumu erisembayo obutini");
+        jPanel2.add(jLabel11, new AbsoluteConstraints(720, 120, -1, -1));
 
-        DetailedLabel.setFont(new Font("Segoe UI", 0, 14)); // NOI18N
+        DetailedLabel.setFont(new Font("Segoe UI", 0, 16)); // NOI18N
         DetailedLabel.setForeground(new Color(255, 255, 255));
 //        DetailedLabel.setText("Last Updated: Sat Apr 29 13:00:00 EEST 2017");
-        DetailedLabel.setText("OKUFUNA APUDETI, NYIGA WANO.");
+        DetailedLabel.setText("Okufuna Apudeti, Nyiga Wano.");
         jPanel2.add(DetailedLabel, new AbsoluteConstraints(385, 250, 240, -1));
 
-        WindLabel.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
+        WindLabel.setFont(new Font("Segoe UI", 0, 16)); // NOI18N
         WindLabel.setForeground(new Color(255, 255, 255));
 //        Changed Wind Speed to Embiro y'empeewo
-        WindLabel.setText("Embiro y'empewo: 5m/s");
-        jPanel2.add(WindLabel, new AbsoluteConstraints(70, 240, 240, 25));
+        WindLabel.setText("Obungi bw'empewo: 5m/s");
+        jPanel2.add(WindLabel, new AbsoluteConstraints(65, 240, 245, 25));
 
-        HumidityLabel.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
+        HumidityLabel.setFont(new Font("Segoe UI", 0, 16)); // NOI18N
         HumidityLabel.setForeground(new Color(255, 255, 255));
-        HumidityLabel.setText("Humidity: 62%");
-        jPanel2.add(HumidityLabel, new AbsoluteConstraints(70, 200, 210, 25));
+//        humidity
+        HumidityLabel.setText("Amazzi agali mu mpewo: 62%");
+        jPanel2.add(HumidityLabel, new AbsoluteConstraints(65, 200, 245, 25));
 
         LocationLabel.setFont(new Font("Segoe UI", 0, 36)); // NOI18N
         LocationLabel.setForeground(new Color(255, 255, 255));
@@ -411,8 +430,8 @@ public class MainWeatherFrame extends javax.swing.JFrame {
             }
         });
         jPanel2.add(RefreshIconLabel, new AbsoluteConstraints(630, 250, 20, -1));
-
-        jLabel6.setIcon(new ImageIcon(getClass().getResource("/spots_background_light_blur_68629_1920x1080.jpg"))); // NOI18N
+//   spots_background_light_blur_68629_1920x1080.jpg
+        jLabel6.setIcon(new ImageIcon(getClass().getResource("/bb.jpg"))); // NOI18N
         jPanel2.add(jLabel6, new AbsoluteConstraints(0, 0, 990, 490));
 
         getContentPane().add(jPanel2, new AbsoluteConstraints(0, 0, 990, 480));
@@ -563,6 +582,14 @@ public class MainWeatherFrame extends javax.swing.JFrame {
         DynJLabelList.AddDayOfWeekTemperature(SATTempJLabel);
     }
 
+//    public void SpeakUp(String weatherDescr){
+
+//        //Create TextToSpeech
+//        TextToSpeech tts = new TextToSpeech();
+//        tts.setVoice("cmu-rms-hsmm");
+//        tts.speak("'The weather today is ' + weather.getWeatherDescription() + '.'", 2.0f, false, true);
+//    }
+
     public static void main(String args[]) {
         BlockUI check = new BlockUI();
         FeedEntry entry = check.IsStart();
@@ -571,6 +598,8 @@ public class MainWeatherFrame extends javax.swing.JFrame {
             public void run() {
                 if (check.getVisibilityVar().get()) {
                     new MainWeatherFrame(entry);
+//                    new SpeakUp(WeatherImp() weather);
+
                 } else {
                     new JFxBuilder(new DialogObject(Alert.AlertType.ERROR, "Error Dialog", "Ooops, there was an error!",
                             "Internet not available, Cross check your internet connectivity and try again")).Invoke();

@@ -37,6 +37,7 @@ public class WeatherHttpRest {
             final DailyForecast forecast = owm.dailyForecastByCityName(entry.getLocation(), entry.getCountryCode(), forecastDays);
 
             System.out.println("Raw Response: " + forecast.getRawResponse());
+
             int numForecasts = forecast.getForecastCount();
             for (int i = 0; i < numForecasts; i++) {
                 final DailyForecast.Forecast dayForecast = forecast.getForecastInstance(i);
@@ -62,13 +63,13 @@ public class WeatherHttpRest {
         forecastValue.setMinTemperature(TemperatureRoundSplit.SplitStringValue(temperature.getMinimumTemperature()) + DEGREE + "C");
         forecastValue.setMaxTemperature(TemperatureRoundSplit.SplitStringValue(temperature.getMaximumTemperature()) + DEGREE + "C");
         forecastValue.setDateTemperature(TemperatureRoundSplit.SplitStringValue(temperature.getDayTemperature()) + DEGREE + "C");
-
-        forecastValue.setHumidity("Humidity: " + String.valueOf(dayForecast.getHumidity()) + "%");
-//        Pressure to Puleesa
-        forecastValue.setPressure("Puleesa: " + String.valueOf(dayForecast.getPressure()) + " mbar ");
+//        Humidity to amazzi agali mu mpewo
+        forecastValue.setHumidity("Amazzi agali mu mpewo : " + String.valueOf(dayForecast.getHumidity()) + "%");
+//        Pressure to Puleesa to Amanyi g'empewo
+        forecastValue.setPressure("Amanyi g'empewo: " + String.valueOf(dayForecast.getPressure()) + " mbar ");
         forecastValue.setClouds(String.valueOf(dayForecast.getPercentageOfClouds()) + "%");
-//        Wind Speed to Embiro y'Empewo
-        forecastValue.setWind_Speed("Embiro y'empewo : " + String.valueOf(dayForecast.getWindSpeed()) + "m/s");
+//        Wind Speed to Obungi bw'empewo
+        forecastValue.setWind_Speed("Obungi bw'empewo : " + String.valueOf(dayForecast.getWindSpeed()) + "m/s");
 
         forecastValue.setDescription(weather.getWeatherDescription());
 
@@ -89,12 +90,13 @@ public class WeatherHttpRest {
 
         PutMapValues(this.weather.DayOfWeekWeather(day));
 
+
         System.out.println(weather.getWeatherDescription());
         System.out.println(forecastValue.toString());
+
     }
 
     private void PutMapValues(final DynJLabelObject labelObj) {
         WeatherMaphm.put(labelObj, forecastValue);
     }
-
 }
