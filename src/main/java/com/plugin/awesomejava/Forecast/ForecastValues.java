@@ -20,7 +20,6 @@ public class ForecastValues {
     private String Pressure;
     private String Clouds;
     private String Wind_Speed;
-//    private String DescriptionLG;
 
     public ForecastValues() {
     }

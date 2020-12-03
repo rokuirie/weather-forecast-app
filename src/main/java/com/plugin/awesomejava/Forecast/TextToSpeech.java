@@ -8,7 +8,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
-
 import javax.sound.sampled.AudioInputStream;
 
 import marytts.LocalMaryInterface;
@@ -86,7 +85,7 @@ public class TextToSpeech {
     /**
      * Stop the MaryTTS from Speaking
      */
-    public void stopSpeaking() {
+    private void stopSpeaking() {
         // Stop the previous player
         if (tts != null)
             tts.cancel();

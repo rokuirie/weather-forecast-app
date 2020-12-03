@@ -1,9 +1,6 @@
 package com.plugin.awesomejava.UIApp;
 
 import com.plugin.awesomejava.Forecast.FeedEntry;
-//import com.plugin.awesomejava.Forecast.WeatherImp;
-import com.plugin.awesomejava.Forecast.TextToSpeech;
-import com.plugin.awesomejava.Forecast.AudioPlayer;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.EventQueue;
@@ -25,18 +22,34 @@ import javax.swing.SwingConstants;
 import javax.swing.Timer;
 import javax.swing.WindowConstants;
 
+//import com.plugin.awesomejava.Forecast.WeatherImp;
+//import com.plugin.awesomejava.Forecast.TextToSpeech;
+//import com.plugin.awesomejava.Forecast.AudioPlayer;
+//import java.util.Arrays;
+//import java.util.List;
 
-// to work with marytts voice support
-import java.util.Arrays;
-import java.util.List;
+//class MarySpeaks implements Runnable {
+//    WeatherImp weather;
+//    String weatherDescription;
+//
+//    MarySpeaks(){
+//
+//    }
+//
+//    public void run(){
+//        if(weather.getDescription() == "moderate rain"){
+//            weatherDescription = "Obukuba bugenda kufuyirira leero";
+//        } else if(weather.getDescription() == "heavy intensity rain"){
+//            weatherDescription = "Enkuba egenda kufudemba leero";
+//        } else if(weather.getDescription() == "overcast clouds"){
+//            weatherDescription = "Kibisse";
+//        }
+//        TextToSpeech tts = new TextToSpeech();
+//        tts.speak(weatherDescription, 1.0f, false, true);
+//    }
+//}
 
-import marytts.util.data.audio.MaryAudioUtils;
-import marytts.signalproc.effects.JetPilotEffect;
-import marytts.signalproc.effects.LpcWhisperiserEffect;
-import marytts.signalproc.effects.RobotiserEffect;
-import marytts.signalproc.effects.StadiumEffect;
-import marytts.signalproc.effects.VocalTractLinearScalerEffect;
-import marytts.signalproc.effects.VolumeEffect;
+
 
 public class MainWeatherFrame extends javax.swing.JFrame {
 
@@ -98,8 +111,6 @@ public class MainWeatherFrame extends javax.swing.JFrame {
     private Timer timer = null;
     private DynamicJLabelList DynJLabelList;
     private final FeedEntry entry;
-
-//    private final WeatherImp weather;
 
     public MainWeatherFrame(FeedEntry entry) {
         this.entry = entry;
@@ -189,8 +200,8 @@ public class MainWeatherFrame extends javax.swing.JFrame {
 
         PressureJLabel.setFont(new Font("Segoe UI", 0, 16)); // NOI18N
         PressureJLabel.setForeground(new Color(255, 255, 255));
-//        Pressure to amanyi g'empewo below
-        PressureJLabel.setText("Amanyi g'empewo: 23.67 inHG  ");
+//        Pressure to amanyi g'empewo below to Puleesa
+        PressureJLabel.setText("Puleesa: 23.67 inHG  ");
         jPanel2.add(PressureJLabel, new AbsoluteConstraints(65, 160, 230, -1));
 
         jSeparator5.setBackground(new Color(255, 255, 255));
@@ -346,7 +357,7 @@ public class MainWeatherFrame extends javax.swing.JFrame {
         DescriptionLabel.setForeground(new Color(255, 255, 255));
 //        Mostly cloudy to Kibisse
         DescriptionLabel.setText("Kibisse");
-        jPanel2.add(DescriptionLabel, new AbsoluteConstraints(385, 210, 140, -1));
+        jPanel2.add(DescriptionLabel, new AbsoluteConstraints(385, 210, 160, -1));
 
         jLabel16.setIcon(new ImageIcon(getClass().getResource("/Thermometer-44.png"))); // NOI18N
         jPanel2.add(jLabel16, new AbsoluteConstraints(820, 230, 40, 50));
@@ -361,7 +372,7 @@ public class MainWeatherFrame extends javax.swing.JFrame {
 
         jLabel13.setFont(new Font("Segoe UI", 1, 16)); // NOI18N
         jLabel13.setForeground(new Color(255, 255, 255));
-        jLabel13.setText("E'bbugumu erisinga");
+        jLabel13.setText("Ebbugumu erisinga");
         jPanel2.add(jLabel13, new AbsoluteConstraints(720, 210, -1, -1));
 
         MinTempLabel.setFont(new Font("Dialog", 0, 34)); // NOI18N
@@ -371,7 +382,7 @@ public class MainWeatherFrame extends javax.swing.JFrame {
 
         jLabel11.setFont(new Font("Segoe UI", 1, 16)); // NOI18N
         jLabel11.setForeground(new Color(255, 255, 255));
-        jLabel11.setText("E'bbugumu erisembayo obutini");
+        jLabel11.setText("Ebbugumu erisembayo obutini");
         jPanel2.add(jLabel11, new AbsoluteConstraints(720, 120, -1, -1));
 
         DetailedLabel.setFont(new Font("Segoe UI", 0, 16)); // NOI18N
@@ -529,15 +540,15 @@ public class MainWeatherFrame extends javax.swing.JFrame {
 //            jLabel20.setText(timeValue + " Okumakya");
 //            Change added
             if(cal.get(Calendar.HOUR_OF_DAY) == 7){
-                jLabel20.setText("1:" + cal.get(Calendar.MINUTE) + " Okumakya");
+                jLabel20.setText("1:" + cal.get(Calendar.MINUTE) + " ez'enkya");
             } else if(cal.get(Calendar.HOUR_OF_DAY) == 8){
-                jLabel20.setText("2:" + cal.get(Calendar.MINUTE) + " Okumakya");
+                jLabel20.setText("2:" + cal.get(Calendar.MINUTE) + " ez'enkya");
             } else if(cal.get(Calendar.HOUR_OF_DAY) == 9){
-                jLabel20.setText("3:" + cal.get(Calendar.MINUTE) + " Okumakya");
+                jLabel20.setText("3:" + cal.get(Calendar.MINUTE) + " ez'enkya");
             } else if(cal.get(Calendar.HOUR_OF_DAY) == 10){
-                jLabel20.setText("4:" + cal.get(Calendar.MINUTE) + " Okumakya");
+                jLabel20.setText("4:" + cal.get(Calendar.MINUTE) + " ez'enkya");
             } else if(cal.get(Calendar.HOUR_OF_DAY) == 11){
-                jLabel20.setText("5:" + cal.get(Calendar.MINUTE) + " Okumakya");
+                jLabel20.setText("5:" + cal.get(Calendar.MINUTE) + " ez'enkya");
             } else if(cal.get(Calendar.HOUR_OF_DAY) == 24){
                 jLabel20.setText("6:" + cal.get(Calendar.MINUTE) + " Tumbi");
             } else if(cal.get(Calendar.HOUR_OF_DAY) == 01){
@@ -582,15 +593,8 @@ public class MainWeatherFrame extends javax.swing.JFrame {
         DynJLabelList.AddDayOfWeekTemperature(SATTempJLabel);
     }
 
-//    public void SpeakUp(String weatherDescr){
-
-//        //Create TextToSpeech
-//        TextToSpeech tts = new TextToSpeech();
-//        tts.setVoice("cmu-rms-hsmm");
-//        tts.speak("'The weather today is ' + weather.getWeatherDescription() + '.'", 2.0f, false, true);
-//    }
-
     public static void main(String args[]) {
+
         BlockUI check = new BlockUI();
         FeedEntry entry = check.IsStart();
 
@@ -598,11 +602,8 @@ public class MainWeatherFrame extends javax.swing.JFrame {
             public void run() {
                 if (check.getVisibilityVar().get()) {
                     new MainWeatherFrame(entry);
-//                    new SpeakUp(WeatherImp() weather);
-
                 } else {
-                    new JFxBuilder(new DialogObject(Alert.AlertType.ERROR, "Error Dialog", "Ooops, there was an error!",
-                            "Internet not available, Cross check your internet connectivity and try again")).Invoke();
+                    new JFxBuilder(new DialogObject(Alert.AlertType.ERROR,"Obuzibu!", "Wabadewo Obuzibu", "Intanenti Yo Teliko. Kebera Netiwaka Yo.")).Invoke();
                 }
             }
         });
