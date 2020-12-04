@@ -353,11 +353,11 @@ public class MainWeatherFrame extends javax.swing.JFrame {
         jLabel18.setIcon(new ImageIcon(getClass().getResource("/Humidity_44px.png"))); // NOI18N
         jPanel2.add(jLabel18, new AbsoluteConstraints(10, 190, -1, 40));
 
-        DescriptionLabel.setFont(new Font("Segoe UI", 0, 18)); // NOI18N
+        DescriptionLabel.setFont(new Font("Segoe UI", 0, 16)); // NOI18N
         DescriptionLabel.setForeground(new Color(255, 255, 255));
 //        Mostly cloudy to Kibisse
         DescriptionLabel.setText("Kibisse");
-        jPanel2.add(DescriptionLabel, new AbsoluteConstraints(385, 210, 160, -1));
+        jPanel2.add(DescriptionLabel, new AbsoluteConstraints(385, 210, 270, -1));
 
         jLabel16.setIcon(new ImageIcon(getClass().getResource("/Thermometer-44.png"))); // NOI18N
         jPanel2.add(jLabel16, new AbsoluteConstraints(820, 230, 40, 50));

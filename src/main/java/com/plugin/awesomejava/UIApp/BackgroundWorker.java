@@ -83,7 +83,36 @@ public class BackgroundWorker extends SwingWorker<String, Void> {
 
     private void SetForecastValuesForCurrentDay(final ForecastValues ForecastValue) {
         this.CurrentTempLabel.setText(ForecastValue.getDateTemperature());
-        this.DescriptionLabel.setText(ForecastValue.getDescription());
+
+//        this.DescriptionLabel.setText(ForecastValue.getDescription());
+        if(ForecastValue.getDescription().equals("moderate rain")){
+            this.DescriptionLabel.setText("Obukuba bugenda kufuyirira leero");
+        } else if(ForecastValue.getDescription().equals("light rain")){
+            this.DescriptionLabel.setText("Enkuba entono-tono");
+        } else if(ForecastValue.getDescription().equals("freezing rain")){
+            this.DescriptionLabel.setText("Enkuba elimu o'buyogovu");
+        } else if(ForecastValue.getDescription().equals("shower rain")){
+            this.DescriptionLabel.setText("Enkuba");
+        } else if(ForecastValue.getDescription().equals("heavy intensity rain")){
+            this.DescriptionLabel.setText("Enkuba namutikwa");
+        } else if(ForecastValue.getDescription().equals("overcast clouds")){
+            this.DescriptionLabel.setText("Embile e'bikwaafu");
+        } else if(ForecastValue.getDescription().equals("few clouds")){
+            this.DescriptionLabel.setText("Embile ebitono-tono");
+        } else if(ForecastValue.getDescription().equals("scattered clouds")){
+            this.DescriptionLabel.setText("Embile ebyeetade");
+        } else if(ForecastValue.getDescription().equals("broken clouds")){
+            this.DescriptionLabel.setText("Embile e'bikutufu-kutufu");
+        } else if(ForecastValue.getDescription().equals("clear sky")){
+            this.DescriptionLabel.setText("Eggulu okutali bile");
+        } else if(ForecastValue.getDescription().equals("thunderstorm with light rain")){
+            this.DescriptionLabel.setText("Embuyaga ya laddu n'enkuba entono");
+        } else if(ForecastValue.getDescription().equals("thunderstorm with rain")){
+            this.DescriptionLabel.setText("Embuyaga ya laddu elimu enkuba");
+        }
+        else {
+            this.DescriptionLabel.setText(ForecastValue.getDescription());
+        }
 
 
 //        this.DetailedLabel.setText(ForecastValue.getDateInformations());

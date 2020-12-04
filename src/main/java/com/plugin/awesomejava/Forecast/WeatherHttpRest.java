@@ -98,161 +98,164 @@ public class WeatherHttpRest {
 
         PutMapValues(this.weather.DayOfWeekWeather(day));
 
-
         System.out.println(weather.getWeatherDescription());
         System.out.println(forecastValue.toString());
 
+
+    }
+
+    private void SaySth(final DailyForecast.Forecast.Weather weather){
 //        added code
 //        String weatherDescription = "";
 //        rain section
         if(weather.getWeatherDescription().equals("moderate rain")){
 //            weatherDescription = "Obukuba bugenda kufuyirira leero";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("Obukuba bugenda kufuyirira leero", 1.0f, false, true);
+            tts.speak("Obukuba bugenda kufuyirira leero", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("heavy intensity rain")){
 //            weatherDescription = "Enkuba egenda kufudemba leero";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("Enkuba egenda kufudemba leero", 1.0f, false, true);
+            tts.speak("Enkuba egenda kufudemba leero", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("light rain")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("Enkuba entono tono", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("very heavy rain")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("extreme rain")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("freezing rain")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("light intensity shower rain")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("shower rain")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("heavy intensity rain")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("ragged shower rain")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         }
 //        clouds section
         else if(weather.getWeatherDescription().equals("overcast clouds")){
 //            weatherDescription = "Kazimeera";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("Kazimeera", 1.0f, false, true);
+            tts.speak("Kazimeera", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("few clouds")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("Obuleerere", 1.0f, false, true);
+            tts.speak("Obuleerere", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("scattered clouds")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("Kibisse", 1.0f, false, true);
+            tts.speak("Kibisse", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("broken clouds")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("Kibisse", 1.0f, false, true);
+            tts.speak("Kibisse", 1.0f, false, false);
         }
 //        clear sky section
         else if(weather.getWeatherDescription().equals("clear sky")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("Butukula", 1.0f, false, true);
+            tts.speak("Butukula", 1.0f, false, false);
         }
 //        thunderstorm section
         else if(weather.getWeatherDescription().equals("thunderstorm with light rain")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("thunderstorm with rain")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("thunderstorm with heavy rain")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("light thunderstorm")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("thunderstorm")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("heavy thunderstorm")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("ragged thunderstorm")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("thunderstorm with light drizzle")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("thunderstorm with drizzle")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("thunderstorm with heavy drizzle")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         }
 //        drizzle
         else if(weather.getWeatherDescription().equals("light intensity drizzle")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("Ekimpoowooze", 1.0f, false, true);
+            tts.speak("Ekimpoowooze", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("drizzle")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("heavy intensity drizzle")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("ragged shower rain")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("light intensity drizzle rain")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("drizzle rain")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("heavy intensity drizzle rain")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("shower rain and drizzle")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("heavy shower rain and drizzle")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         } else if(weather.getWeatherDescription().equals("shower drizzle")){
 //            weatherDescription = "";
             TextToSpeech tts = new TextToSpeech();
-            tts.speak("", 1.0f, false, true);
+            tts.speak("", 1.0f, false, false);
         }
     }
 
