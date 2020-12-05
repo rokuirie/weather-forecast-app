@@ -13,6 +13,9 @@ import javafx.scene.control.Alert;
 import javax.swing.JLabel;
 import javax.swing.SwingWorker;
 
+import com.plugin.awesomejava.Forecast.TextToSpeech;
+import com.plugin.awesomejava.Forecast.AudioPlayer;
+
 public class BackgroundWorker extends SwingWorker<String, Void> {
 
     private final FeedEntry entrys;
@@ -30,6 +33,8 @@ public class BackgroundWorker extends SwingWorker<String, Void> {
     private final JLabel WindLabel;
     private final JLabel WeatherDayIcon;
     private final JLabel RefreshIconLabel;
+
+//    TextToSpeech tts = new TextToSpeech();
 
     public BackgroundWorker(FeedEntry entrys, JLabel CurrentTempLabel, JLabel DayLambel, JLabel DescriptionLabel, JLabel DetailedLabel,
             JLabel HumidityLabel, JLabel MaxTempLabel, JLabel MinTempLabel, JLabel WindLabel) {
@@ -90,6 +95,7 @@ public class BackgroundWorker extends SwingWorker<String, Void> {
             this.DescriptionLabel.setText("Enkuba nga ssi nyingi");
         } else if(ForecastValue.getDescription().equals("light rain")){
             this.DescriptionLabel.setText("Enkuba entono-tono");
+//            tts.speak("Enkuba entono tono", 1.0f, true, false);
         } else if(ForecastValue.getDescription().equals("freezing rain")){
             this.DescriptionLabel.setText("Enkuba elimu o'buyogovu");
         } else if(ForecastValue.getDescription().equals("shower rain")){

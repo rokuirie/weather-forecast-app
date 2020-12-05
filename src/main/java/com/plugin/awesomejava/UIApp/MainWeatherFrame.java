@@ -22,34 +22,10 @@ import javax.swing.SwingConstants;
 import javax.swing.Timer;
 import javax.swing.WindowConstants;
 
-//import com.plugin.awesomejava.Forecast.WeatherImp;
-//import com.plugin.awesomejava.Forecast.TextToSpeech;
-//import com.plugin.awesomejava.Forecast.AudioPlayer;
-//import java.util.Arrays;
-//import java.util.List;
-
-//class MarySpeaks implements Runnable {
-//    WeatherImp weather;
-//    String weatherDescription;
-//
-//    MarySpeaks(){
-//
-//    }
-//
-//    public void run(){
-//        if(weather.getDescription() == "moderate rain"){
-//            weatherDescription = "Obukuba bugenda kufuyirira leero";
-//        } else if(weather.getDescription() == "heavy intensity rain"){
-//            weatherDescription = "Enkuba egenda kufudemba leero";
-//        } else if(weather.getDescription() == "overcast clouds"){
-//            weatherDescription = "Kibisse";
-//        }
-//        TextToSpeech tts = new TextToSpeech();
-//        tts.speak(weatherDescription, 1.0f, false, true);
-//    }
-//}
-
-
+import com.plugin.awesomejava.Forecast.*;
+import marytts.modules.synthesis.Voice;
+import java.util.Arrays;
+import java.util.List;
 
 public class MainWeatherFrame extends javax.swing.JFrame {
 
@@ -594,10 +570,8 @@ public class MainWeatherFrame extends javax.swing.JFrame {
     }
 
     public static void main(String args[]) {
-
         BlockUI check = new BlockUI();
         FeedEntry entry = check.IsStart();
-
         EventQueue.invokeLater(new Runnable() {
             public void run() {
                 if (check.getVisibilityVar().get()) {

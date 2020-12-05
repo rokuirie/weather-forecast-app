@@ -68,49 +68,6 @@
             <version>2.15.0</version>
         </dependency>
 
-<!--        <dependency>-->
-<!--            <groupId>com.hascode.plugin</groupId>-->
-<!--            <artifactId>guava</artifactId>-->
-<!--            <version>22.0</version>-->
-<!--            <scope>system</scope>-->
-<!--            <systemPath>${basedir}/lib/com/hascode/plugin/guava/22.0/guava-22.0.jar</systemPath>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.hascode.plugin</groupId>-->
-<!--            <artifactId>marytts-builder</artifactId>-->
-<!--            <version>5.2-jar-with-dependencies</version>-->
-<!--            <scope>system</scope>-->
-<!--            <systemPath>${basedir}/lib/com/hascode/plugin/marytts-builder/5.2-jar-with-dependencies/marytts-builder-5.2-jar-with-dependencies.jar</systemPath>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.hascode.plugin</groupId>-->
-<!--            <artifactId>marytts-lang-en</artifactId>-->
-<!--            <version>5.2</version>-->
-<!--            <scope>system</scope>-->
-<!--            <systemPath>${basedir}/lib/com/hascode/plugin/marytts-lang-en/5.2/marytts-lang-en-5.2.jar</systemPath>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.hascode.plugin</groupId>-->
-<!--            <artifactId>voice-cmu-rms-hsmm</artifactId>-->
-<!--            <version>5.2</version>-->
-<!--            <scope>system</scope>-->
-<!--            <systemPath>${basedir}/lib/com/hascode/plugin/voice-cmu-rms-hsmm/5.2/voice-cmu-rms-hsmm-5.2.jar</systemPath>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.hascode.plugin</groupId>-->
-<!--            <artifactId>voice-cmu-slt-hsmm</artifactId>-->
-<!--            <version>5.2</version>-->
-<!--            <scope>system</scope>-->
-<!--            <systemPath>${basedir}/lib/com/hascode/plugin/voice-cmu-slt-hsmm/5.2/voice-cmu-slt-hsmm-5.2.jar</systemPath>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.hascode.plugin</groupId>-->
-<!--            <artifactId>voice-dfki-poppy-hsmm</artifactId>-->
-<!--            <version>5.2</version>-->
-<!--            <scope>system</scope>-->
-<!--            <systemPath>${basedir}/lib/com/hascode/plugin/voice-dfki-poppy-hsmm/5.2/voice-dfki-poppy-hsmm-5.2.jar</systemPath>-->
-<!--        </dependency>-->
-
 <!--        https://bintray.com/marytts/marytts/voice-dfki-poppy-hsmm-->
         <dependency>
             <groupId>de.dfki.mary</groupId>
@@ -123,6 +80,14 @@
             <groupId>de.dfki.mary</groupId>
             <artifactId>marytts-voicebuilding</artifactId>
             <version>0.1</version>
+            <type>pom</type>
+        </dependency>
+
+<!--        https://dl.bintray.com/marytts/marytts/-->
+        <dependency>
+            <groupId>de.dfki.mary</groupId>
+            <artifactId>marytts</artifactId>
+            <version>5.2</version>
             <type>pom</type>
         </dependency>
 
@@ -154,6 +119,19 @@
     </properties>
 
     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.3</version>
+                </plugin>
+                <plugin>
+                    <artifactId>maven-shade-plugin</artifactId>
+                    <version>2.3</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+
         <plugins>
             <plugin>
                 <artifactId>maven-assembly-plugin</artifactId>
@@ -182,7 +160,24 @@
 
             <plugin>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>2.3</version>
+<!--                <version>2.3</version>-->
+                <version>3.2.4</version>
+<!--                added-->
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ServicesResourceTransformer"/>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer"/>
+                            </transformers>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                        </configuration>
+                    </execution>
+                </executions>
             </plugin>
 
             <plugin>
