@@ -86,7 +86,8 @@ public class BackgroundWorker extends SwingWorker<String, Void> {
 
 //        this.DescriptionLabel.setText(ForecastValue.getDescription());
         if(ForecastValue.getDescription().equals("moderate rain")){
-            this.DescriptionLabel.setText("Obukuba bugenda kufuyirira leero");
+//            obukuba bugenda kufuyirira leero for moderate rain
+            this.DescriptionLabel.setText("Enkuba nga ssi nyingi");
         } else if(ForecastValue.getDescription().equals("light rain")){
             this.DescriptionLabel.setText("Enkuba entono-tono");
         } else if(ForecastValue.getDescription().equals("freezing rain")){
@@ -109,12 +110,37 @@ public class BackgroundWorker extends SwingWorker<String, Void> {
             this.DescriptionLabel.setText("Embuyaga ya laddu n'enkuba entono");
         } else if(ForecastValue.getDescription().equals("thunderstorm with rain")){
             this.DescriptionLabel.setText("Embuyaga ya laddu elimu enkuba");
+        } else if(ForecastValue.getDescription().equals("thunderstorm with heavy rain")){
+            this.DescriptionLabel.setText("Embuyaga elimu enkuba ennyingi");
+        } else if(ForecastValue.getDescription().equals("light thunderstorm")){
+            this.DescriptionLabel.setText("Embuyaga entono-tono");
+        } else if(ForecastValue.getDescription().equals("thunderstorm")){
+            this.DescriptionLabel.setText("Embuyaga");
+        } else if(ForecastValue.getDescription().equals("heavy thunderstorm")){
+            this.DescriptionLabel.setText("Embuyaga eya maanyi");
+        } else if(ForecastValue.getDescription().equals("Ragged thunderstorm")){
+            this.DescriptionLabel.setText("Embuyaga eyeetadde-tadde");
+        } else if(ForecastValue.getDescription().equals("Thunderstorm with light drizzle")){
+            this.DescriptionLabel.setText("Embuyaga elimu obukuba obutono");
+        } else if(ForecastValue.getDescription().equals("light intensity drizzle")){
+            this.DescriptionLabel.setText("Obukuba obutono");
+        } else if(ForecastValue.getDescription().equals("ragged shower rain")){
+            this.DescriptionLabel.setText("Enkuba etali ya mujilano");
+        } else if(ForecastValue.getDescription().equals("light intensity drizzle rain")){
+            this.DescriptionLabel.setText("Obukuba obutono");
+        } else if(ForecastValue.getDescription().equals("heavy intensity drizzle rain")){
+            this.DescriptionLabel.setText("Enkuba ey'amaanyi");
+        } else if(ForecastValue.getDescription().equals("shower rain and drizzle")){
+            this.DescriptionLabel.setText("Enkuba etali ya mujilano");
+        } else if(ForecastValue.getDescription().equals("heavy shower rain and drizzle")){
+            this.DescriptionLabel.setText("Enkuba ey'amaanyi nga yetadde-tadde");
+        } else if(ForecastValue.getDescription().equals("shower drizzle")){
+            this.DescriptionLabel.setText("Obukuba obuwelako");
         }
         else {
             this.DescriptionLabel.setText(ForecastValue.getDescription());
         }
-
-
+        
 //        this.DetailedLabel.setText(ForecastValue.getDateInformations());
         this.HumidityLabel.setText(ForecastValue.getHumidity());
         this.PressureJLabel.setText(ForecastValue.getPressure());
