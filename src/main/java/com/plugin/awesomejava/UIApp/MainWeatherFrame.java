@@ -22,10 +22,10 @@ import javax.swing.SwingConstants;
 import javax.swing.Timer;
 import javax.swing.WindowConstants;
 
-import com.plugin.awesomejava.Forecast.*;
-import marytts.modules.synthesis.Voice;
-import java.util.Arrays;
-import java.util.List;
+import com.plugin.awesomejava.Forecast.TextToSpeech;
+//import marytts.modules.synthesis.Voice;
+//import java.util.Arrays;
+//import java.util.List;
 
 public class MainWeatherFrame extends javax.swing.JFrame {
 
@@ -87,6 +87,8 @@ public class MainWeatherFrame extends javax.swing.JFrame {
     private Timer timer = null;
     private DynamicJLabelList DynJLabelList;
     private final FeedEntry entry;
+
+    private TextToSpeech tts = new TextToSpeech();
 
     public MainWeatherFrame(FeedEntry entry) {
         this.entry = entry;
@@ -451,7 +453,7 @@ public class MainWeatherFrame extends javax.swing.JFrame {
     private void RefreshIconLabelMouseClicked(MouseEvent evt) {                                              
         timer.stop();
         final BackgroundWorker worker = new BackgroundWorker(entry, DynJLabelList, CurrentTempLabel, DayLambel, DescriptionLabel,
-                DetailedLabel, HumidityLabel, PressureJLabel, MaxTempLabel, MinTempLabel, WindLabel, WeatherDayIcon, RefreshIconLabel);
+                DetailedLabel, HumidityLabel, PressureJLabel, MaxTempLabel, MinTempLabel, WindLabel, WeatherDayIcon, RefreshIconLabel, tts);
         worker.execute();
         timer.restart();
     }                                             
