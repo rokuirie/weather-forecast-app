@@ -9,8 +9,6 @@ import com.plugin.awesomejava.UIApp.DynamicJLabelList;
 import java.util.HashMap;
 import javax.swing.ImageIcon;
 
-//import java.util.regex.Matcher;
-//import java.util.regex.Pattern;
 
 public class WeatherHttpRest {
     private static final boolean isMetric = true;
@@ -73,13 +71,6 @@ public class WeatherHttpRest {
         forecastValue.setClouds(String.valueOf(dayForecast.getPercentageOfClouds()) + "%");
 //        Wind Speed to Obungi bw'empewo
         forecastValue.setWind_Speed("Obungi bw'empewo : " + String.valueOf(dayForecast.getWindSpeed()) + "m/s");
-
-//        Pattern pattern = Pattern.compile(weather.getWeatherDescription(), Pattern.CASE_INSENSITIVE);
-//        Matcher matcher = pattern.matcher("light rain");
-//        boolean matchFound = matcher.find();
-//        if(matchFound){
-//            forecastValue.setDescription("Enkuba entono.");
-//        }
 
         forecastValue.setDescription(weather.getWeatherDescription());
         forecastValue.setDayofWeek(dayForecast.getDateTime());

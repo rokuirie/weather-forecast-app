@@ -23,9 +23,7 @@ import javax.swing.Timer;
 import javax.swing.WindowConstants;
 
 import com.plugin.awesomejava.Forecast.TextToSpeech;
-//import marytts.modules.synthesis.Voice;
-//import java.util.Arrays;
-//import java.util.List;
+import com.plugin.awesomejava.Forecast.AudioPlayer;
 
 public class MainWeatherFrame extends javax.swing.JFrame {
 
@@ -88,7 +86,8 @@ public class MainWeatherFrame extends javax.swing.JFrame {
     private DynamicJLabelList DynJLabelList;
     private final FeedEntry entry;
 
-    private TextToSpeech tts = new TextToSpeech();
+    private static TextToSpeech tts = new TextToSpeech();
+
 
     public MainWeatherFrame(FeedEntry entry) {
         this.entry = entry;
@@ -453,7 +452,7 @@ public class MainWeatherFrame extends javax.swing.JFrame {
     private void RefreshIconLabelMouseClicked(MouseEvent evt) {                                              
         timer.stop();
         final BackgroundWorker worker = new BackgroundWorker(entry, DynJLabelList, CurrentTempLabel, DayLambel, DescriptionLabel,
-                DetailedLabel, HumidityLabel, PressureJLabel, MaxTempLabel, MinTempLabel, WindLabel, WeatherDayIcon, RefreshIconLabel, tts);
+                DetailedLabel, HumidityLabel, PressureJLabel, MaxTempLabel, MinTempLabel, WindLabel, WeatherDayIcon, RefreshIconLabel);
         worker.execute();
         timer.restart();
     }                                             
@@ -542,7 +541,6 @@ public class MainWeatherFrame extends javax.swing.JFrame {
             } else if(cal.get(Calendar.HOUR_OF_DAY) == 06){
                 jLabel20.setText("12:" + cal.get(Calendar.MINUTE) + " Ekiro");
             }
-
         }
     }
 

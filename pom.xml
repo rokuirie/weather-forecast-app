@@ -11,6 +11,7 @@
             <name>A temporary repository created by NetBeans for libraries and jars it could not identify. Please replace the dependencies in this repository with correct ones and delete this repository.</name>
             <url>file:${project.basedir}/lib</url>
         </repository>
+
       <repository>
           <id>lib</id>
           <name>lib</name>
@@ -22,16 +23,6 @@
               <enabled>false</enabled>
           </snapshots>
           <url>file:${project.basedir}/lib</url>
-      </repository>
-      <!-- Mary TTS -->
-      <repository>
-          <id>marytts</id>
-          <url>https://dl.bintray.com/marytts/marytts/</url>
-      </repository>
-
-      <repository>
-          <id>MaryTTS</id>
-          <url>https://jcenter.bintray.com</url>
       </repository>
 
       <repository>
@@ -68,20 +59,12 @@
             <version>2.15.0</version>
         </dependency>
 
-<!--        https://bintray.com/marytts/marytts/voice-dfki-poppy-hsmm-->
-        <dependency>
-            <groupId>de.dfki.mary</groupId>
-            <artifactId>voice-dfki-poppy-hsmm</artifactId>
-            <version>5.2</version>
-            <type>pom</type>
-        </dependency>
-<!--        https://bintray.com/marytts/marytts/marytts-->
-        <dependency>
-            <groupId>de.dfki.mary</groupId>
-            <artifactId>marytts-voicebuilding</artifactId>
-            <version>0.1</version>
-            <type>pom</type>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>de.dfki.mary</groupId>-->
+<!--            <artifactId>voice-dfki-poppy-hsmm</artifactId>-->
+<!--            <version>5.2</version>-->
+<!--            <type>pom</type>-->
+<!--        </dependency>-->
 
 <!--        https://dl.bintray.com/marytts/marytts/-->
         <dependency>
@@ -90,6 +73,7 @@
             <version>5.2</version>
             <type>pom</type>
         </dependency>
+
 
 <!--        https://bintray.com/marytts/marytts/marytts/view/files/de/dfki/mary/marytts-runtime/5.2#files/de/dfki/mary/marytts-runtime/5.2-->
         <dependency>
@@ -101,8 +85,9 @@
 
         <dependency>
             <groupId>de.dfki.mary</groupId>
-            <artifactId>voice-cmu-slt-hsmm</artifactId>
+            <artifactId>marytts-languages</artifactId>
             <version>5.2</version>
+            <type>pom</type>
         </dependency>
 
         <dependency>
@@ -186,97 +171,97 @@
                 <version>2.3</version>
                 <executions>
                     <execution>
-                        <id>com.hascode.plugin:guava-22.0</id>
+                        <id>lib:guava-22.0</id>
                         <phase>verify</phase>
                         <goals>
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <groupId>com.hascode.plugin</groupId>
+                            <groupId>lib</groupId>
                             <artifactId>guava</artifactId>
                             <version>22.0</version>
                             <packaging>jar</packaging>
-                            <file>${basedir}/lib/com/hascode/plugin/guava/guava-22.0.jar</file>
+                            <file>${basedir}/lib/guava-22.0.jar</file>
                             <createChecksum>true</createChecksum>
                             <generatePom>true</generatePom>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>com.hascode.plugin:marytts-builder-5.2-jar-with-dependencies</id>
+                        <id>lib:marytts</id>
                         <phase>verify</phase>
                         <goals>
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <groupId>com.hascode.plugin</groupId>
+                            <groupId>lib</groupId>
                             <artifactId>marytts-builder</artifactId>
                             <version>5.2</version>
                             <packaging>jar</packaging>
-                            <file>${basedir}/lib/com/hascode/plugin/marytts-builder/5.2-jar-with-dependencies/marytts-builder-5.2-jar-with-dependencies.jar</file>
+                            <file>${basedir}/lib/marytts-builder-5.2-jar-with-dependencies.jar</file>
                             <createChecksum>true</createChecksum>
                             <generatePom>true</generatePom>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>com.hascode.plugin:marytts-lang-en-5.2</id>
+                        <id>lib:marytts-lang-en-5.2</id>
                         <phase>verify</phase>
                         <goals>
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <groupId>com.hascode.plugin</groupId>
+                            <groupId>lib</groupId>
                             <artifactId>marytts-lang-en-5.2</artifactId>
                             <version>5.2</version>
                             <packaging>jar</packaging>
-                            <file>${basedir}/lib/com/hascode/plugin/marytts-lang-en/marytts-lang-en-5.2.jar</file>
+                            <file>${basedir}/lib/marytts-lang-en-5.2.jar</file>
                             <createChecksum>true</createChecksum>
                             <generatePom>true</generatePom>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>com.hascode.plugin:voice-cmu-rms-hsmm-5.2</id>
+                        <id>lib:voice-cmu-rms-hsmm-5.2</id>
                         <phase>verify</phase>
                         <goals>
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <groupId>com.hascode.plugin</groupId>
+                            <groupId>lib</groupId>
                             <artifactId>voice-cmu-rms-hsmm</artifactId>
                             <version>5.2</version>
                             <packaging>jar</packaging>
-                            <file>${basedir}/lib/com/hascode/plugin/voice-cmu-rms-hsmm/voice-cmu-rms-hsmm-5.2.jar</file>
+                            <file>${basedir}/lib/voice-cmu-rms-hsmm-5.2.jar</file>
                             <createChecksum>true</createChecksum>
                             <generatePom>true</generatePom>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>com.hascode.plugin:voice-cmu-slt-hsmm-5.2</id>
+                        <id>lib:voice-cmu-slt-hsmm-5.2</id>
                         <phase>verify</phase>
                         <goals>
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <groupId>com.hascode.plugin</groupId>
+                            <groupId>lib</groupId>
                             <artifactId>voice-cmu-slt-hsmm</artifactId>
                             <version>5.2</version>
                             <packaging>jar</packaging>
-                            <file>${basedir}/lib/com/hascode/plugin/voice-cmu-slt-hsmm/voice-cmu-slt-hsmm-5.2.jar</file>
+                            <file>${basedir}/lib/voice-cmu-slt-hsmm-5.2.jar</file>
                             <createChecksum>true</createChecksum>
                             <generatePom>true</generatePom>
                         </configuration>
                     </execution>
                     <execution>
-                        <id>com.hascode.plugin:voice-dfki-poppy-hsmm-5.2</id>
+                        <id>lib:voice-dfki-poppy-hsmm-5.2</id>
                         <phase>verify</phase>
                         <goals>
                             <goal>install-file</goal>
                         </goals>
                         <configuration>
-                            <groupId>com.hascode.plugin</groupId>
+                            <groupId>lib</groupId>
                             <artifactId>voice-dfki-poppy-hsmm</artifactId>
                             <version>5.2</version>
                             <packaging>jar</packaging>
-                            <file>${basedir}/lib/com/hascode/plugin/voice-dfki-poppy-hsmm/voice-dfki-poppy-hsmm-5.2.jar</file>
+                            <file>${basedir}/lib/voice-dfki-poppy-hsmm-5.2.jar</file>
                             <createChecksum>true</createChecksum>
                             <generatePom>true</generatePom>
                         </configuration>
