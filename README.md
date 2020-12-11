@@ -1,27 +1,4 @@
-
-<h1 align="center">
-  <br>
-    <img align="left"  width="200" src="https://github.com/PanagiotisDrakatos/Weather-Forecast/blob/master/ImagesDoc/dragdrop_hd.gif">
-    <img width="150" src="https://github.com/PanagiotisDrakatos/Weather-Forecast/blob/master/ImagesDoc/logo.png">
-    <img align="right"  width="200" src="https://github.com/PanagiotisDrakatos/Weather-Forecast/blob/master/ImagesDoc/dragdrop_hd.gif">
-  <br>
-  Weather-Forecast Implementation
-  <br>
-</h1>
-
-<h4 align="center">A minimal java  Weather-Forecast app with awesome UI based on <a href="https://docs.oracle.com/javase/tutorial/uiswing/">Swing</a>.</h4>
-
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-[![Build Status](https://travis-ci.org/PanagiotisDrakatos/Weather-Forecast.svg?branch=master)](https://travis-ci.org/PanagiotisDrakatos/Weather-Forecast)
-[![star this repo](http://githubbadges.com/star.svg?user=PanagiotisDrakatos&repo=Weather-Forecast&style=flat&color=fff&background=007ec6)](https://github.com/PanagiotisDrakatos/Weather-Forecast)
-[![GitHub Issues](https://img.shields.io/github/issues/PanagiotisDrakatos/Weather-Forecast.svg)](https://github.com/PanagiotisDrakatos/Weather-Forecast/issues)
-[![License](https://img.shields.io/badge/license-MIT-orange.svg)](https://github.com/PanagiotisDrakatos/Weather-Forecast/blob/master/LICENSE)
-[![GitHub pull requests](https://img.shields.io/github/issues-pr/PanagiotisDrakatos/Weather-Forecast.svg)](https://travis-ci.org/PanagiotisDrakatos/Weather-Forecast/pull_requests)
-
-<p align="center">
-  <img  src="https://github.com/PanagiotisDrakatos/Weather-Forecast/blob/master/ImagesDoc/ezgif.com-video-to-gif.gif">
-</p>
-
+# Luganda Weather Forecast Application  
 
 # Basic Overview
 Weather-Forecast app is what the title says it is. It's a quick, simple weather app. The features include the basics, including forecasts, current temperature, hourly forecasts, and more. Other than that, it's really not all that complicated. It's free to download with no in-app purchases and the source code available.
