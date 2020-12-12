@@ -65,30 +65,6 @@ public class LocationInfo {
         return dayOfWeek;
     }
 
-//    public static String dayLuganda(){
-//        Calendar calendar = Calendar.getInstance();
-//        int dayOfWeek = calendar.get(Calendar.DAY_OF_WEEK);
-//        String dayOfWeekStr = String.valueOf(dayOfWeek);
-//        String dayLG = "day";
-//
-//        if(dayOfWeekStr == "2"){
-//            dayLG = "Olw'ebbalaza";
-//        } else if(dayOfWeekStr == "3"){
-//            dayLG = "Olw'okubiri";
-//        } else if(dayOfWeekStr == "4"){
-//            dayLG = "Olw'okusatu";
-//        } else if(dayOfWeekStr == "5"){
-//            dayLG = "Olw'okuna";
-//        } else if(dayOfWeekStr == "6"){
-//            dayLG = "Olw'okutano";
-//        } else if(dayOfWeekStr == "7"){
-//            dayLG = "Olw'omukaaga";
-//        } else if(dayOfWeekStr == "1"){
-//            dayLG = "Ssabitti";
-//        }
-//        return dayLG;
-//    }
-
     private static DateObjects GetLocalDate() {
         final Date date = new Date();
         final LocalDate localDate = date.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
